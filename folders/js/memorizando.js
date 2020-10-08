@@ -3,14 +3,8 @@ $(document).ready(function () {
     var img1=null;
     var img2;
     var contracha=0;
-    var contvidas=6;
+    var contvidas=4;
     var contpuntos=0;
-    var imagenes=[
-        "IMG\1.png", "IMG\2.png",
-        "IMG\3.png", "IMG\4.png",
-        "IMG\5.png", "IMG\6.png",
-        "IMG\7.png", "IMG\8.png"
-    ];
     
     $(".sobre").click(function() {
         if(img1==null) {
@@ -53,10 +47,53 @@ $(document).ready(function () {
             }
         }
     })
+
+    $("#nuevo").click(function() {
+        location.reload();
+    })
     
 });
 
 
 function nuevo() {
     toastr.success("Debes seleccionar dos casillas incógnitas, si das con dos imágenes iguales, sumas puntos, de lo contrario pierdes.");
+    var random;
+    var imagenes=[
+        "IMG/1.png", "IMG/2.png",
+        "IMG/3.png", "IMG/4.png",
+        "IMG/5.png", "IMG/6.png",
+        "IMG/7.png", "IMG/8.png"
+    ]; 
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#1").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#2").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#3").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#4").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#5").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#6").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#7").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#8").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#9").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#10").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#11").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#12").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#13").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#14").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#15").attr("src", imagenes[random]);
+    random=Math.floor(Math.random() * (8 + 1));
+    $("#16").attr("src", imagenes[random]);
 }
