@@ -1,8 +1,8 @@
 $(document).ready(function () {
     toastr.success("Debes seleccionar dos casillas incógnitas, si das con dos imágenes iguales, sumas puntos, de lo contrario pierdes, si llegas a 6 puntos, ganas automáticamente.");
     nuevo();
-    var img1=null;
-    var img2=null;
+    var img1=""
+    var img2="";
     var contracha=0;
     var contvidas=4;
     var contpuntos=0;
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     
     $(".sobre").click(function() {
-        if(img1==null) {
+        if(img1=="") {
             img1 = $(this).siblings().attr("src");
             imagen1=$(this);
             $(this).hide();
@@ -37,8 +37,12 @@ $(document).ready(function () {
                 $("#racha").html(contracha);
                 $("#puntos").html(contpuntos)
                 toastr.success("¡Has acertado!.");
-                img1=null;
-                img2=null;
+                if(contpuntos==6) {
+                    toastr.success('¡Has ganado!, presiona "Nuevo" para una nueva partida.');
+                    $(".sobre").remove();
+                }
+                img1="";
+                img2="";
 
             } else {
                 contvidas--;
@@ -64,12 +68,8 @@ $(document).ready(function () {
                     toastr.error('¡Has perdido!, presione "Nuevo" para una nueva partida.')
                     $(".sobre").remove();
                 }
-                if(contvidas==6) {
-                    toastr.success('¡Has ganado!, presiona "Nuevo" para una nueva partida.');
-                    $(".sobre").remove();
-                }
-                img1=null;
-                img2=null;
+                img1="";
+                img2="";
             }
         }
     })
