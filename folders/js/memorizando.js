@@ -21,6 +21,10 @@ $(document).ready(function () {
         }
     })
 
+    $("#nuevo").click(function() {
+        location.reload();
+    })
+
     
     $(".sobre").click(function() {
         if(img1=="") {
@@ -72,10 +76,6 @@ $(document).ready(function () {
                 img2="";
             }
         }
-    })
-
-    $("#nuevo").click(function() {
-        location.reload();
     })
     
 });
